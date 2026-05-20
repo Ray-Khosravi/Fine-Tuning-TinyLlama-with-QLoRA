@@ -141,6 +141,14 @@ dataset_name = "yahma/alpaca-cleaned"
 >
 > This teaches the model the pattern: **instruction → response**.
 
+Here's what the real dataset looks like in the Hugging Face dataset viewer — **51.8k rows** of `output`, `input`, and `instruction` columns:
+
+<div align="center">
+  <img src="assets/dataset-preview.png" alt="Preview of the alpaca-cleaned dataset showing output, input, and instruction columns" width="850">
+</div>
+
+> 👀 Notice that the `input` column is **empty for most rows** (~98% of the time) — that's exactly why our formatting function in [Step 8](#step-8--format-each-example-into-a-prompt) handles both cases (with and without input).
+
 ---
 
 ### Step 4 — Configure 4-bit quantization (the "Q" in QLoRA)
@@ -372,6 +380,7 @@ By finishing this guide you now understand:
 ## 📚 Resources
 
 - [TinyLlama on Hugging Face](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0)
+- [alpaca-cleaned dataset](https://huggingface.co/datasets/yahma/alpaca-cleaned)
 - [QLoRA paper](https://arxiv.org/abs/2305.14314)
 - [PEFT documentation](https://huggingface.co/docs/peft)
 - [TRL documentation](https://huggingface.co/docs/trl)
